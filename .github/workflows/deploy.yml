@@ -1,0 +1,23 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: 🔨 Construir la imagen Docker
+        run: docker build -t piedra-papel-tijera .
+
+      - name: 🚀 Iniciar sesión en Vercel CLI
+        run: npm install -g vercel && vercel login --token ${{ secrets.VERCEL_TOKEN }}
+
+      - name: 📦 Subir y desplegar en Vercel
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
