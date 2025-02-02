@@ -16,8 +16,11 @@ jobs:
       - name: 🔨 Construir la imagen Docker
         run: docker build -t piedra-papel-tijera .
 
-      - name: 🚀 Iniciar sesión en Vercel CLI
-        run: npm install -g vercel && vercel login --token ${{ secrets.VERCEL_TOKEN }}
+      - name: 🚀 Install Vercel CLI
+        run: npm install -g vercel
 
-      - name: 📦 Subir y desplegar en Vercel
+      - name: 🔑 Authenticate with Vercel
+        run: vercel --token ${{ secrets.VERCEL_TOKEN }}
+
+      - name: 📦 Deploy to Vercel using Docker
         run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
