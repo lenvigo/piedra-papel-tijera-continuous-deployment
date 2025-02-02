@@ -7,6 +7,19 @@ Este es un juego de Piedra, Papel o Tijera desarrollado en **JavaScript, HTML y 
 - **Diseño responsivo**: Adaptado para dispositivos móviles y escritorio.
 - **Despliegue en Vercel**: Configurado para una implementación sencilla y rápida.
 
+## 🚀 Estructura
+
+📦 piedra-papel-tijera-continuous-deployment
+ ┣ 📂 public
+ ┃ ┣ 📜 index.html  # Interfaz del juego
+ ┃ ┣ 📜 script.js   # Lógica del juego
+ ┃ ┗ 📜 styles.css  # Estilos de la interfaz
+ ┣ 📜 Dockerfile    # Configuración del contenedor
+ ┣ 📜 vercel.json   # Configuración para Vercel
+ ┣ 📜 .github/workflows/deploy.yml  # CI/CD con GitHub Actions
+ ┣ 📜 LICENSE       # Licencia MIT
+ ┗ 📜 README.md     # Documentación del proyecto
+
 ## 📦 Instalación
 1. Clona el repositorio:
    ```sh
@@ -33,17 +46,17 @@ Este es un juego de Piedra, Papel o Tijera desarrollado en **JavaScript, HTML y 
    ```
 
 ## 🛠️ GitHub Actions para CI/CD
-
+Cada vez que realices un push a la rama master, GitHub Actions construirá la imagen Docker y la desplegará automáticamente en Vercel.
 
 ## 🌍 URL del Proyecto
-
+https://piedra-papel-tijera-continuous-deployment.vercel.app/
 
 ## ♿ Accesibilidad
 - Usa **atributos ARIA** para mejorar la accesibilidad.
 - Permite la navegación mediante teclado y lectores de pantalla.
 
 ## 📜 Licencia
-
+Este proyecto está bajo la Licencia MIT. Puedes usarlo libremente respetando los términos de la licencia.
 
 ---
 💡 *Si tienes dudas o sugerencias, abre un issue o contribuye al proyecto.* 😃
