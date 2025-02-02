@@ -19,8 +19,10 @@ jobs:
       - name: 🚀 Install Vercel CLI
         run: npm install -g vercel
 
-      - name: 🔑 Authenticate with Vercel
-        run: vercel --token ${{ secrets.VERCEL_TOKEN }}
+      - name: 🔑 Autenticarse en Vercel
+        run: vercel login
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       - name: 📦 Deploy to Vercel using Docker
         run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
